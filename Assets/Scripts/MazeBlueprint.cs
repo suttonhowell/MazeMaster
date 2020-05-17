@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.CompilerServices;
 using System.Security.Cryptography.X509Certificates;
 using UnityEngine;
 
@@ -15,6 +16,7 @@ public static class MazeBlueprint{
     public static int turn = 1;
 
     public static void createPath(int length) {
+        clear();
         //clear old path
         path.Clear();
         //populate maze path with random left and right turns
@@ -26,19 +28,22 @@ public static class MazeBlueprint{
             //add left turn randomly
             if (rand.NextDouble() < 0.5) {
                 path.Add(0);
+                UnityEngine.Debug.Log("left");
             }
             //add right turn randomly
             else
             {
                 path.Add(1);
+                UnityEngine.Debug.Log("right");
             }
         }
+
         
     }
 
     public static bool wrongTurn(int direction)
     {
-        if ((int)path[turn - 1] == direction) return true;
+        if ((int)path[turn - 1] != direction) return true;
         return false;
     }
 

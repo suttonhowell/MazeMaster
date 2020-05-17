@@ -22,8 +22,6 @@ public class WinSceneUI : MonoBehaviour
     public void returnToMenu()
     {
         //wipe all parameters in maze blueprint
-        //reset other parameters
-        MazeBlueprint.clear();
         SceneManager.LoadScene("MainMenuScene", LoadSceneMode.Single);
     }
 

@@ -29,8 +29,7 @@ public class MazeSpawner : MonoBehaviour
      */
     public GameObject spawnMaze(int direction, bool correct, GameObject oldMaze)
 
-    {
-        UnityEngine.Debug.Log("MAZE SPAWNER ACTIVATED");
+    { 
         //get rotation of old maze
         GameObject mazeSpawn = null;
         GameObject spawnObj = null;
@@ -44,11 +43,11 @@ public class MazeSpawner : MonoBehaviour
             //figure out if we need the sign or not
             if (MazeBlueprint.turn == MazeBlueprint.round)
             {
-                if (MazeBlueprint.turn >= MazeBlueprint.path.Count)
+                /*if (MazeBlueprint.turn >= MazeBlueprint.path.Count)
                 {
                     spawnObj = mazeObj; 
-                }
-                else if ((int)MazeBlueprint.path[MazeBlueprint.turn] == 0)
+                }*/
+                if ((int)MazeBlueprint.path[MazeBlueprint.turn-1] == 0)
                 {
                     spawnObj = mazeObjL;
                 }

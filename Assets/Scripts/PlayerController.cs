@@ -158,7 +158,7 @@ public class PlayerController : MonoBehaviour
 
     private void loseGame()
     {
-
+        SceneManager.LoadScene("LoseScene", LoadSceneMode.Single);
     }
 
     private void winGame()
